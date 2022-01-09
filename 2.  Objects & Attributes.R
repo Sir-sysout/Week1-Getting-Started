@@ -56,6 +56,6 @@ n
 print(attributes(n))  # NULL
 
 x <- 12L
-x
+class(x)
 attributes(x)
 

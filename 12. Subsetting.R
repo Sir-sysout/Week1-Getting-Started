@@ -127,8 +127,68 @@ x <- c(1, 3, NA, 4, NA, 6)
 bad <- is.na(x)    # This is a vector of T/Fs
       #F  F  T   F  T   F
 
-x[!bad]
+x <- x[!bad]
+x
 # Gives all values marked as TRUE in bad
 # 1 3 4 6 
+
+
+x <- c(1, 2, NA, 4, NA, 5)
+y <- c("a", "n", NA, "d", NA, NA)
+
+good <- complete.cases(x, y)  # Must be same len!
+good
+# gives a logical vector of whether i is NA
+# works like and operator if one NA in the row the row is FALSE
+
+
+x[good]
+y[good]
+
+
+
+#######################
+# Vectorized Operations 
+
+# !!!!!!!!!!!!!!
+
+# Many operations in R are vectorized 
+# To make code more efficient, concise, and easier to read
+
+x = 1:4
+y = 6:9
+x + y
+x > 2
+x >= 2
+y == 8
+x * y
+x / y
+
+
+# MATRIX Vectorized Operations
+
+x = matrix(1:4, 2, 2)
+y = matrix(rep(10, 4), 2, 2)
+
+x
+y
+x*y    # IMPORTANT!!!! Element-wise multiplication
+
+x %*% y # IMPORTANT!!!! TRUE Matrix multi.
+
+x = 1:4
+y = 2:3
+x + y
+
+
+x = c(2, 3, 1, 10, 12, 6)
+
+x[x %in% 1:5] <- 0
+x
+
+
+
+
+
 
 
